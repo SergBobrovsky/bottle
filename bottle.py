@@ -3150,7 +3150,7 @@ def path_shift(script_name, path_info, shift=1):
     if scriptlist and scriptlist[0] == '': scriptlist = []
     if 0 < shift <= len(pathlist):
         moved = pathlist[:shift]
-        scriptlist = scriptlist + moved
+        scriptlist += moved
         pathlist = pathlist[shift:]
     elif 0 > shift >= -len(scriptlist):
         moved = scriptlist[shift:]
