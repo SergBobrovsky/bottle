@@ -844,8 +844,8 @@ class Bottle(object):
             caches. If an ID or route object is given, only that specific route
             is affected. """
         if route is None: routes = self.routes
-        elif isinstance(route, Route): routes = [route]
-        else: routes = [self.routes[route]]
+        elif isinstance(route, Route): routes = (route,)
+        else: routes = (self.routes[route],)
         for route in routes:
             route.reset()
         if DEBUG:
